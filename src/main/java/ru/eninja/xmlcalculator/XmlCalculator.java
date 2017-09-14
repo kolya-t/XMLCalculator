@@ -28,19 +28,15 @@ public class XmlCalculator {
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     }
 
-    public void calculate(File srcXml, File destXml) throws IOException {
+    public void calculate(File srcXml, File destXml) throws IOException, SAXException {
         if (!srcXml.exists() || !srcXml.isFile()) {
             throw new FileNotFoundException(String.format("File \'%s\' not found", srcXml));
         }
 
-        try {
-            schemaFactory
-                    .newSchema(new StreamSource(new File(srcXml.getParentFile(), XSD_FILENAME)))
-                    .newValidator()
-                    .validate(new StreamSource(srcXml));
-        } catch (SAXException e) {
-            System.err.println("XML invalid. Reason: " + e);
-        }
+        schemaFactory
+                .newSchema(new StreamSource(new File(srcXml.getParentFile(), XSD_FILENAME)))
+                .newValidator()
+                .validate(new StreamSource(srcXml));
 
         SimpleCalculator calculator = mapper.readValue(srcXml, SimpleCalculator.class);
         calculator.calculate();
