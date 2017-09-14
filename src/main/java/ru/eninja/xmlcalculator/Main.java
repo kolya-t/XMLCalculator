@@ -1,25 +1,19 @@
 package ru.eninja.xmlcalculator;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import ru.eninja.xmlcalculator.model.SimpleCalculator;
-
 import java.io.File;
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        ObjectMapper mapper = new XmlMapper();
-        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        if (args.length == 0) {
+            System.err.println("Need at least one argument");
+            System.exit(1);
+        }
 
-        SimpleCalculator calculator = mapper.readValue(
-                Main.class.getClassLoader().getResourceAsStream("sampleTest.xml"),
-                SimpleCalculator.class);
+        File srcXml = new File(args[0]);
+        File destXml = (args.length > 1) ? new File(args[1]) : new File(srcXml.getParentFile(), "target.xml");
 
-        calculator.calculate();
-
-        mapper.writeValue(new File("src/main/resources/target.xml"), calculator);
+        new XmlCalculator().calculate(srcXml, destXml);
     }
 }

@@ -16,11 +16,15 @@ public class SimpleCalculator {
     private ExpressionResult[] results;
 
     public void calculate() {
-        if (expressions != null) {
-            results = new ExpressionResult[expressions.length];
-            for (int i = 0; i < expressions.length; i++) {
-                results[i] = expressions[i].calculateResult();
-            }
+        if (expressions == null) {
+            throw new IllegalStateException("No expressions in simpleCalculator");
         }
+
+        results = new ExpressionResult[expressions.length];
+        for (int i = 0; i < expressions.length; i++) {
+            results[i] = expressions[i].calculateResult();
+        }
+
+        expressions = null;
     }
 }
