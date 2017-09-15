@@ -1,4 +1,4 @@
-package ru.eninja.xmlcalculator;
+package ru.eninja.xmlcalculator.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import org.xml.sax.SAXException;
-import ru.eninja.xmlcalculator.model.SimpleCalculator;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
