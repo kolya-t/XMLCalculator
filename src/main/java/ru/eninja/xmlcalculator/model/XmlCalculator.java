@@ -35,7 +35,7 @@ public class XmlCalculator {
         }
 
         schemaFactory
-                .newSchema(new StreamSource(new File(srcXml.getParentFile(), XSD_FILENAME)))
+                .newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(XSD_FILENAME)))
                 .newValidator()
                 .validate(new StreamSource(srcXml));
 
