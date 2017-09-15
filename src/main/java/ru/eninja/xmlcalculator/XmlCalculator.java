@@ -2,6 +2,7 @@ package ru.eninja.xmlcalculator;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import org.xml.sax.SAXException;
@@ -26,6 +27,7 @@ public class XmlCalculator {
         mapper.enable(ToXmlGenerator.Feature.WRITE_XML_DECLARATION);
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
     public void calculate(File srcXml, File destXml) throws IOException, SAXException {
