@@ -12,3 +12,7 @@
 * Сохраняет результаты в новый xml файл, соответствующий той же схеме
 
 При наличии таких ошибок, как несоответствие xml файла схеме или некорректный путь к xml файлу, программа выведет соответствующее сообщение и прекратит работу.
+
+- [Схема Calculator.xsd](src/main/resources/Calculator.xsd)
+- [Пример исходного xml файла](src/test/resources/sampleTest.xml)
+- [Пример результирующего xml файла](src/test/resources/sampleTestExpected.xml)
