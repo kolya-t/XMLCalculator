@@ -3,10 +3,10 @@
                   xsi:noNamespaceSchemaLocation="Calculator.xsd">
   <expressions>
     <expression>
-      <operation OperationType="MUL">
+      <operation OperationType="SUM">
         <operation OperationType="SUB">
           <operation OperationType="SUM">
-            <arg>2</arg>
+            <arg>5</arg>
             <arg>4</arg>
           </operation>
           <operation OperationType="DIV">
@@ -14,9 +14,9 @@
             <arg>4</arg>
           </operation>
         </operation>
-        <operation OperationType="SUB">
+        <operation OperationType="DIV">
           <operation OperationType="SUM">
-            <arg>12</arg>
+            <arg>22</arg>
             <arg>55</arg>
           </operation>
           <operation OperationType="MUL">
