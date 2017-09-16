@@ -8,6 +8,8 @@ class Expression {
     private Operation operation;
 
     ExpressionResult calculateResult() {
-        return new ExpressionResult(operation.calculateResult());
+        ExpressionResult result = new ExpressionResult();
+        result.setResult(operation.calculateResult());
+        return result;
     }
 }

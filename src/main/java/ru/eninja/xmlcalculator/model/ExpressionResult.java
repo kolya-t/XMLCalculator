@@ -7,7 +7,11 @@ class ExpressionResult {
     @JacksonXmlProperty(localName = "result")
     private double result;
 
-    ExpressionResult(double result) {
+    double getResult() {
+        return result;
+    }
+
+    void setResult(double result) {
         this.result = result;
     }
 }
