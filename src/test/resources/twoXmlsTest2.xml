@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleCalculator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="Calculator.xsd">
+  <expressions>
+    <expression>
+      <operation OperationType="MUL">
+        <operation OperationType="SUB">
+          <operation OperationType="SUM">
+            <arg>2</arg>
+            <arg>4</arg>
+          </operation>
+          <operation OperationType="MUL">
+            <arg>1</arg>
+            <arg>4</arg>
+          </operation>
+        </operation>
+        <operation OperationType="SUB">
+          <operation OperationType="SUB">
+            <arg>12</arg>
+            <arg>55</arg>
+          </operation>
+          <operation OperationType="SUB">
+            <arg>123</arg>
+            <arg>4</arg>
+          </operation>
+        </operation>
+      </operation>
+    </expression>
+  </expressions>
+</simpleCalculator>
+

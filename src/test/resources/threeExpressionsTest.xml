@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleCalculator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="Calculator.xsd">
+  <expressions>
+    <expression>
+      <operation OperationType="MUL">
+        <operation OperationType="SUB">
+          <operation OperationType="SUM">
+            <arg>2</arg>
+            <arg>4</arg>
+          </operation>
+          <operation OperationType="DIV">
+            <arg>1</arg>
+            <arg>4</arg>
+          </operation>
+        </operation>
+        <operation OperationType="SUB">
+          <operation OperationType="SUM">
+            <arg>12</arg>
+            <arg>55</arg>
+          </operation>
+          <operation OperationType="MUL">
+            <arg>123</arg>
+            <arg>4</arg>
+          </operation>
+        </operation>
+      </operation>
+    </expression>
+
+    <expression>
+      <operation OperationType="DIV">
+        <operation OperationType="SUB">
+          <operation OperationType="SUM">
+            <arg>5</arg>
+            <arg>1</arg>
+          </operation>
+          <operation OperationType="DIV">
+            <arg>2</arg>
+            <arg>5</arg>
+          </operation>
+        </operation>
+        <operation OperationType="DIV">
+          <operation OperationType="SUM">
+            <arg>12</arg>
+            <arg>55</arg>
+          </operation>
+          <operation OperationType="MUL">
+            <arg>123</arg>
+            <arg>23</arg>
+          </operation>
+        </operation>
+      </operation>
+    </expression>
+
+    <expression>
+      <operation OperationType="DIV">
+        <operation OperationType="SUM">
+          <operation OperationType="SUM">
+            <arg>2</arg>
+            <arg>14</arg>
+          </operation>
+          <operation OperationType="DIV">
+            <arg>1</arg>
+            <arg>44</arg>
+          </operation>
+        </operation>
+        <operation OperationType="DIV">
+          <operation OperationType="SUM">
+            <arg>12</arg>
+            <arg>55</arg>
+          </operation>
+          <operation OperationType="DIV">
+            <arg>123</arg>
+            <arg>4</arg>
+          </operation>
+        </operation>
+      </operation>
+    </expression>
+  </expressions>
+</simpleCalculator>
+
