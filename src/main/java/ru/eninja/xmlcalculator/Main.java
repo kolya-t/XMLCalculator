@@ -1,7 +1,6 @@
 package ru.eninja.xmlcalculator;
 
 import org.xml.sax.SAXException;
-import ru.eninja.xmlcalculator.model.XmlCalculator;
 
 import java.io.File;
 import java.io.FileNotFoundException;

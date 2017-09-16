@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @JacksonXmlRootElement(localName = "simpleCalculator")
-class SimpleCalculator {
+public class SimpleCalculator {
 
     @JacksonXmlElementWrapper(localName = "expressions")
     @JacksonXmlProperty(localName = "expression")
@@ -15,7 +15,15 @@ class SimpleCalculator {
     @JacksonXmlProperty(localName = "expressionResult")
     private ExpressionResult[] results;
 
-    void calculate() {
+    public void setExpressions(Expression[] expressions) {
+        this.expressions = expressions;
+    }
+
+    public ExpressionResult[] getResults() {
+        return results;
+    }
+
+    public void calculate() {
         if (expressions == null) {
             throw new IllegalStateException("No expressions in simpleCalculator");
         }
